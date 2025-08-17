@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Paws & Care</title>
+  <meta name="description" content="Contact Paws & Care for bookings, partnerships, or questions">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style> body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; } </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+  <header class="sticky top-0 z-30 bg-white/60 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">P</div>
+        <div class="text-lg font-semibold">Paws & Care</div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm hover:text-emerald-600 transition">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:text-emerald-600 transition">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm font-medium">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h1 class="text-3xl font-semibold mb-3">Get in touch</h1>
+        <p class="text-gray-700 mb-6">Questions about bookings, daycare availability, or training programs? Send us a message — we'll reply in 1-2 business days.</p>
+
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label class="text-sm font-medium">Name</label>
+              <input id="name" type="text" required class="w-full mt-2 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-200" />
+            </div>
+            <div>
+              <label class="text-sm font-medium">Email</label>
+              <input id="email" type="email" required class="w-full mt-2 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-200" />
+            </div>
+            <div>
+              <label class="text-sm font-medium">Message</label>
+              <textarea id="message" rows="5" required class="w-full mt-2 px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-200"></textarea>
+            </div>
+            <div class="flex items-center gap-3">
+              <button type="submit" class="px-5 py-3 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition">Send Message</button>
+              <button type="button" id="resetBtn" class="px-4 py-3 border rounded-md hover:bg-gray-50">Reset</button>
+            </div>
+            <div id="formStatus" class="text-sm text-green-600 hidden">Thanks! We'll be in touch soon.</div>
+          </form>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-600">
+          <div class="mb-2"><strong>Address:</strong> 456 Wag Lane, Dogtown</div>
+          <div class="mb-2"><strong>Phone:</strong> (555) 123-PAWS</div>
+          <div><strong>Email:</strong> hello@pawsandcare.example</div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold mb-3">Visit or book an event</h2>
+        <p class="text-gray-700 mb-4">Our facility hosts small-group training and adoption meetups. Let us know what you're interested in and we'll help schedule.</p>
+
+        <div class="w-full rounded-lg overflow-hidden shadow-sm">
+          <img src="{{unsplash: exterior of a welcoming dog care center with outdoor play area}}" alt="Facility exterior" class="w-full h-60 object-cover">
+        </div>
+
+        <div class="mt-6 bg-white p-4 rounded-lg border">
+          <h3 class="font-semibold">Opening hours</h3>
+          <ul class="text-sm text-gray-600 mt-2">
+            <li>Mon–Fri: 7:30 — 18:30</li>
+            <li>Sat: 8:30 — 16:30</li>
+            <li>Sun: Closed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full border-t px-6 py-6 text-sm text-gray-600">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div>© <span id="yearContact"></span> Paws & Care</div>
+      <div><a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="hover:text-emerald-600">Home</a> • <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="hover:text-emerald-600">About</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearContact').textContent = new Date().getFullYear();
+
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const resetBtn = document.getElementById('resetBtn');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+      if (!email.includes('@')) { alert('Please enter a valid email.'); return; }
+
+      // Simulate send
+      contactForm.querySelector('button[type="submit"]').textContent = 'Sent ✓';
+      formStatus.classList.remove('hidden');
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.querySelector('button[type="submit"]').textContent = 'Send Message';
+        formStatus.classList.add('hidden');
+      }, 2000);
+    });
+
+    resetBtn.addEventListener('click', () => contactForm.reset());
+  </script>
+</body>
+</html>
