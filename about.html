@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Paws & Care</title>
+  <meta name="description" content="About Paws & Care — our mission, team, and care standards">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    .logo-font { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+  <header class="sticky top-0 z-30 bg-white/60 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">P</div>
+        <div class="logo-font text-lg">Paws & Care</div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm hover:text-emerald-600 transition">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm font-medium">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm hover:text-emerald-600 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative">
+      <img src="{{unsplash: cozy dog-friendly small business storefront exterior with dogs and owners}}" alt="Our space" class="w-full h-64 object-cover">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="bg-white/80 backdrop-blur px-6 py-4 rounded-md shadow-md">
+          <h1 class="logo-font text-2xl md:text-4xl">Our Story</h1>
+          <p class="text-sm md:text-base text-gray-700 mt-2">We exist to make quality dog care accessible, ethical, and joyful.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-semibold mb-3">Mission & Values</h2>
+          <p class="text-gray-700 mb-4">Paws & Care was founded by dog lovers and certified professionals. We believe every dog deserves compassionate, knowledgeable care delivered in a safe environment. We prioritize positive training, cleanliness, and individualized attention.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-3"><span class="text-emerald-600 font-bold">•</span> Certified staff & trained handlers</li>
+            <li class="flex items-start gap-3"><span class="text-emerald-600 font-bold">•</span> Clean, supervised play areas</li>
+            <li class="flex items-start gap-3"><span class="text-emerald-600 font-bold">•</span> Positive reinforcement training</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-3">How we care</h2>
+          <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+            <li>Meet & greet: We assess temperament and needs.</li>
+            <li>Individual plans: Feeding, rest, and activity preferences noted.</li>
+            <li>Daily updates: Photos and notes available to owners.</li>
+            <li>Ongoing training: Behavior-focused sessions to build skills.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 px-6 py-10">
+      <h3 class="text-2xl font-semibold mb-6">Meet the Team</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <img src="{{unsplash: friendly female dog handler smiling holding a leash}}" alt="Team member" class="w-full h-40 object-cover rounded-md mb-3">
+          <div class="font-semibold">Ava Martinez</div>
+          <div class="text-sm text-gray-500">Head Trainer</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <img src="{{unsplash: male groomer gently bathing a small dog in salon}}" alt="Team member" class="w-full h-40 object-cover rounded-md mb-3">
+          <div class="font-semibold">Liam Park</div>
+          <div class="text-sm text-gray-500">Grooming Lead</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <img src="{{unsplash: compassionate veterinarian checking a dog, clinic scene}}" alt="Team member" class="w-full h-40 object-cover rounded-md mb-3">
+          <div class="font-semibold">Maya Singh</div>
+          <div class="text-sm text-gray-500">On-call Vet</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <img src="{{unsplash: friendly receptionist at pet care facility behind desk}}" alt="Team member" class="w-full h-40 object-cover rounded-md mb-3">
+          <div class="font-semibold">Noah Reyes</div>
+          <div class="text-sm text-gray-500">Operations</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-semibold">Partner with us</h3>
+          <p class="text-sm text-gray-600">We collaborate with vets, rescue groups, and pet-friendly businesses. Reach out to discuss partnerships.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="px-4 py-3 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition">Contact</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="px-4 py-3 border rounded-md hover:bg-gray-50 transition">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t px-6 py-6 text-sm text-gray-600">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div>© <span id="yearAbout"></span> Paws & Care</div>
+      <div><a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="hover:text-emerald-600">Home</a> • <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="hover:text-emerald-600">Contact</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearAbout').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
